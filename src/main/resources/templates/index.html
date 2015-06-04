@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:dt="http://github.com/dandelion/datatables">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-
 <link rel="stylesheet"
 	th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
+<link rel="stylesheet"
+	th:href="@{/lib/handsontable/0.15.0-beta5/pikaday/pikaday.css}" />
+<link rel="stylesheet"
+	th:href="@{/lib/handsontable/0.15.0-beta5/handsontable.full.css}" />
+<link rel="stylesheet" th:href="@{/css/index.css}" />
 
 <title>Dandelion Demo</title>
 </head>
 <body>
-	<h1>Hi Dandelion Master!</h1>
+	<h1>Hi Handsontable Master!</h1>
 	<hr />
 
 	<div class="fluid-container">
-		<div class="col-md-2 col-md-offset-10">
-			<a href="/page">Go to <i>page</i></a>
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-10">
+				<a href="/page">Go to <i>page</i></a>
+			</div>
 		</div>
+
+		<br />
+
+		<div id="table1"></div>
 	</div>
 
-	<button class="btn btn-primary">Click ME</button>
-
-	<table id="myTableId" dt:table="true" dt:url="@{/clientes}"
-		dt:serverside="true" dt:processing="true">
-		<thead>
-			<tr>
-				<th dt:property="telefone">Telefone</th>
-				<th dt:property="nome">Nome</th>
-			</tr>
-		</thead>
-	</table>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/lib/handsontable/0.15.0-beta5/moment/moment.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/lib/handsontable/0.15.0-beta5/pikaday/pikaday.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/lib/handsontable/0.15.0-beta5/zeroclipboard/ZeroClipboard.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/lib/handsontable/0.15.0-beta5/handsontable.full.js}"></script>
+	<script type="text/javascript" th:src="@{js/lang/de.js}"></script>
+	<script type="text/javascript" th:src="@{js/index.js}"></script>
 </body>
 </html>

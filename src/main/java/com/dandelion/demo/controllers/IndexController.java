@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dandelion.demo.model.Person;
-import com.github.dandelion.datatables.core.ajax.DatatablesResponse;
 
 /**
  * @author Nikola.Petrovic
@@ -33,7 +32,7 @@ public class IndexController {
 
     @RequestMapping("/persons")
     @ResponseBody
-    public DatatablesResponse<Person> persons() {
+    public List<Person> persons() {
 	return null;
     }
 
