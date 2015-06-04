@@ -18,23 +18,7 @@ $(function() {
 			format : '0,0.00 $',
 			language : 'de' // more locales available on numeraljs.com
 		} ],
-		data : {
-			page : 2,
-			row : 2,
-			limit : 2,
-			count : 50,
-			part : [ {
-				car : "Mercedes A 160",
-				price_eur : 7000,
-				price_usd : 7000,
-				year : 2011
-			}, {
-				car : "Citroen C4 Coupe",
-				price_eur : 8330,
-				price_usd : 8330,
-				year : 2012
-			} ]
-		},
+		data : getCarData(),
 		page : {
 			limit : 2
 		},
