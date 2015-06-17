@@ -24,6 +24,11 @@ public class IndexController {
 	return "index";
     }
 
+    @RequestMapping("/html")
+    public String html() {
+	return "html";
+    }
+
     @RequestMapping("/page")
     public ModelAndView page() {
 	ModelAndView mav = new ModelAndView("page");
