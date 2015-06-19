@@ -29,6 +29,11 @@ public class IndexController {
 	return "html";
     }
 
+    @RequestMapping("/validation")
+    public String validation() {
+	return "validation";
+    }
+
     @RequestMapping("/page")
     public ModelAndView page() {
 	ModelAndView mav = new ModelAndView("page");

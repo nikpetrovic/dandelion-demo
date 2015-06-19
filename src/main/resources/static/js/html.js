@@ -22,6 +22,7 @@ $(function() {
 	container1 = document.getElementById('table1');
 	hot1 = new Handsontable(container1, {
 		data : data,
+		columnSorting : true,
 		colWidths : [ 200, 200, 200, 80 ],
 		colHeaders : [ "Title", "Description", "Comments", "Cover" ],
 		columns : [ {
