@@ -1,0 +1,118 @@
+[ {
+	"id" : 66900,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 100,
+	"type" : "G",
+	"ut" : 1,
+	"submodel" : "400 F KATANA",
+	"htc" : ""
+}, {
+	"id" : 66901,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 200,
+	"type" : "Z",
+	"ut" : 2,
+	"submodel" : "550 M KATANA",
+	"htc" : ""
+}, {
+	"id" : 66902,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 300,
+	"type" : "Z",
+	"ut" : 3,
+	"submodel" : "550 ES",
+	"htc" : ""
+}, {
+	"id" : 66903,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 400,
+	"type" : "Z",
+	"ut" : 4,
+	"submodel" : "650 G KATANA",
+	"htc" : ""
+}, {
+	"id" : 66904,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 500,
+	"type" : "Z",
+	"ut" : 5,
+	"submodel" : "750 ES",
+	"htc" : ""
+}, {
+	"id" : 66905,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 600,
+	"type" : "Z",
+	"ut" : 6,
+	"submodel" : "750 S KATANA",
+	"htc" : ""
+}, {
+	"id" : 66906,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 700,
+	"type" : "Z",
+	"ut" : 7,
+	"submodel" : "1100 ES",
+	"htc" : ""
+}, {
+	"id" : 66907,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 800,
+	"type" : "Z",
+	"ut" : 8,
+	"submodel" : "1100 S KATANA",
+	"htc" : ""
+}, {
+	"id" : 66908,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 900,
+	"type" : "Z",
+	"ut" : 9,
+	"submodel" : "550 EU",
+	"htc" : ""
+}, {
+	"id" : 66909,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 1000,
+	"type" : "Z",
+	"ut" : 10,
+	"submodel" : "550 EF",
+	"htc" : ""
+}, {
+	"id" : 66910,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 1100,
+	"type" : "Z",
+	"ut" : 11,
+	"submodel" : "750 EF",
+	"htc" : ""
+}, {
+	"id" : 66911,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 1200,
+	"type" : "Z",
+	"ut" : 12,
+	"submodel" : "1100 E",
+	"htc" : ""
+}, {
+	"id" : 66912,
+	"editionId" : 3182,
+	"navId" : "",
+	"no" : 1300,
+	"type" : "Z",
+	"ut" : 13,
+	"submodel" : "1100 EF",
+	"htc" : ""
+} ]

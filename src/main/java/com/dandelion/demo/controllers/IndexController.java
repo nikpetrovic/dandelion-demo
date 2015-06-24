@@ -29,6 +29,11 @@ public class IndexController {
 	return "html";
     }
 
+    @RequestMapping("/twotables")
+    public String twotables() {
+	return "twotables";
+    }
+
     @RequestMapping("/validation")
     public String validation() {
 	return "validation";
