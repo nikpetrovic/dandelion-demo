@@ -23,6 +23,11 @@ public class IndexController {
     public String index() {
 	return "index";
     }
+    
+    @RequestMapping("/blank")
+    public String blank() {
+	return "blank";
+    }
 
     @RequestMapping("/html")
     public String html() {

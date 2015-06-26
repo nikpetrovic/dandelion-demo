@@ -2,44 +2,232 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet"
-	th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
-<link rel="stylesheet"
-	th:href="@{/lib/handsontable/0.15.0/pikaday/pikaday.css}" />
-<link rel="stylesheet"
-	th:href="@{/lib/handsontable/0.15.0/handsontable.full.css}" />
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.0/pikaday/pikaday.css}" />
+<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.0/handsontable.full.css}" />
 <link rel="stylesheet" th:href="@{/css/main.css}" />
 
 <title>Custom HTML Demo</title>
+
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container"></div>
-	</nav>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuBar"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img th:src="@{/resources/imgs/ax_lo_150p.gif}" />
+        </a>
+      </div>
 
-	<div class="container-fluid main">
-		<div class="row">
-			<div class="col-md-10">
-				<div id="table1"></div>
-			</div>
-			<div class="col-md-2">
-				<div id="table2"></div>
-			</div>
-		</div>
-		<div id="table1Selected"></div>
-	</div>
+      <div class="collapse navbar-collapse" id="menuBar">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">
+              Type
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Type Administration</a>
+              </li>
+              <li>
+                <a href="#">Copy (Country to country)</a>
+              </li>
+              <li>
+                <a href="#">Copy (Edition to edition)</a>
+              </li>
+              <li>
+                <a href="#">Delete Country</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Extras</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+        </ul>
 
-	<script type="text/javascript"
-		th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
-	<script type="text/javascript"
-		th:src="@{/lib/handsontable/0.15.0/moment/moment.js}"></script>
-	<script type="text/javascript"
-		th:src="@{/lib/handsontable/0.15.0/pikaday/pikaday.js}"></script>
-	<script type="text/javascript"
-		th:src="@{/lib/handsontable/0.15.0/zeroclipboard/ZeroClipboard.js}"></script>
-	<script type="text/javascript"
-		th:src="@{/lib/handsontable/0.15.0/handsontable.full.js}"></script>
-	<script type="text/javascript" th:src="@{js/lang/de.js}"></script>
-	<script type="text/javascript" th:src="@{js/twotables.js}"></script>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">
+              <span class="text-primary">Nikola Petrovic</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#statusBar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="statusBar">
+        <ul class="nav navbar-nav">
+          <li>
+            <div>
+              <span class="text-muted">Parts Developer: Michaud, Franck</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="text-muted">Labour Developer: Chene, Freddy</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="text-muted">Graph. Developer: Michaud, Franck</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="text-muted">Ident. Developer: </span>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="bg-danger">
+            <a href="#">
+              <span>Djordje Ivanovic</span>
+              &nbsp;
+              <span class="glyphicon glyphicon-lock"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid main">
+  
+  <input type="text" id="test"/>
+  
+  
+  
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="form-inline">
+            <div class="form-group">
+              <label class="control-label">AX-Code</label>
+              <div id="prefetch">
+                <input type="text" class="form-control typeahead" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <dl class="dl-horizontal">
+                <dt>AX-Code</dt>
+                <dd>A CC</dd>
+                <dt>Manufacturer</dt>
+                <dd>CITROEN</dd>
+                <dt>Model</dt>
+                <dd>C4 Cactus</dd>
+                <dt>Model Code</dt>
+                <dd>0B-OP ab 03.2014</dd>
+              </dl>
+            </div>
+            <div class="col-md-4">
+              <dl class="dl-horizontal">
+                <dt>VIN Data</dt>
+                <dd></dd>
+                <dt>Parts Data Source</dt>
+                <dd>Citroen Service</dd>
+                <dt>Labour Times</dt>
+                <dd>Citroen Service</dd>
+                <dt>Start - End of Production</dt>
+                <dd>01.03.2014 - note set</dd>
+              </dl>
+            </div>
+            <div class="col-md-4">
+              <dl class="dl-horizontal">
+                <dt>Completion Date</dt>
+                <dd>2014.10.15</dd>
+                <dt>Body Version</dt>
+                <dd>Pass. Car</dd>
+                <dt>Mutation Date</dt>
+                <dd>2015.01.30 - FRDMRD</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li class="active" role="presentation">
+          <a role="tab" data-toggle="tab" href="#submodelsTab" class="text-uppercase">
+            <b>Submodels</b>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" data-toggle="tab" href="#optionsTab" class="text-uppercase">
+            <b>Options</b>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" data-toggle="tab" href="#repairMethodsTab" class="text-uppercase">
+            <b>Repair Methods</b>
+          </a>
+        </li>
+        <li role="presentation">
+          <a role="tab" data-toggle="tab" href="#reportsTab" class="text-uppercase">
+            <b>Reports</b>
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="submodelsTab" role="tabpanel">
+          <div class="col-md-10">
+            <div id="table1"></div>
+          </div>
+          <div class="col-md-2">
+            <div id="table2"></div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="optionsTab" role="tabpanel"></div>
+        <div class="tab-pane fade" id="repairMethodsTab" role="tabpanel"></div>
+        <div class="tab-pane fade" id="reportsTab" role="tabpanel"></div>
+      </div>
+
+    </div>
+
+    <div id="table1Selected"></div>
+  </div>
+
+  <script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/3.2.0/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/bloodhound.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/moment/moment.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/pikaday/pikaday.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/zeroclipboard/ZeroClipboard.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/handsontable.full.js}"></script>
+  <script type="text/javascript" th:src="@{js/lang/de.js}"></script>
+  <script type="text/javascript" th:src="@{js/twotables.js}"></script>
 </body>
 </html>
