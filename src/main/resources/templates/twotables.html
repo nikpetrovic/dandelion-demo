@@ -6,6 +6,7 @@
 <link rel="stylesheet" th:href="@{/lib/handsontable/0.15.0/pikaday/pikaday.css}" />
 <link rel="stylesheet" th:href="@{/lib/handsontable/0.15.0/handsontable.full.css}" />
 <link rel="stylesheet" th:href="@{/css/main.css}" />
+<link rel="stylesheet" th:href="@{/css/typeahead-styles.css}" />
 
 <title>Custom HTML Demo</title>
 
@@ -118,19 +119,23 @@
   </nav>
 
   <div class="container-fluid main">
-  
-  <input type="text" id="test"/>
-  
-  
-  
     <div class="row">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="form-inline">
+          <div class="form-horizontal">
             <div class="form-group">
-              <label class="control-label">AX-Code</label>
-              <div id="prefetch">
-                <input type="text" class="form-control typeahead" />
+              <label for="axCode" class="col-md-1 control-label">AX-Code</label>
+              <div class="col-md-7">
+                <div id="prefetch">
+                  <input type="text" class="form-control typeahead" id="axCode" />
+                </div>
+              </div>
+              <label for="ddEdition" class="col-md-1 control-label">Edition</label>
+              <div class="col-md-3">
+                <select id="ddEdition" class="form-control">
+                  <option>02/0 - 2015.05.15</option>
+                  <option>01/0 - 2013.10.14</option>
+                </select>
               </div>
             </div>
           </div>
@@ -169,6 +174,9 @@
                 <dd>Pass. Car</dd>
                 <dt>Mutation Date</dt>
                 <dd>2015.01.30 - FRDMRD</dd>
+                <dt class="text-danger text-uppercase merged">
+                  <strong>Current state for completion</strong>
+                </dt>
               </dl>
             </div>
           </div>
@@ -220,13 +228,12 @@
 
   <script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/bootstrap/3.2.0/js/bootstrap.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/bloodhound.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.jquery.min.js}"></script>
-  <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.bundle.min.js}"></script>
   <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/moment/moment.js}"></script>
   <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/pikaday/pikaday.js}"></script>
   <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/zeroclipboard/ZeroClipboard.js}"></script>
   <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/handsontable.full.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/handlebars/3.0.0-1/handlebars.min.js}"></script>
   <script type="text/javascript" th:src="@{js/lang/de.js}"></script>
   <script type="text/javascript" th:src="@{js/twotables.js}"></script>
 </body>

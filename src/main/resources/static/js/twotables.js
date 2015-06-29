@@ -31,8 +31,7 @@ $(function() {
 		data : "cc"
 	} ];
 
-	var hot2 = initTable(colHeaders2, colDefs2, {}, "table2", function(row,
-			col, prop) {
+	var hot2 = initTable(colHeaders2, colDefs2, {}, "table2", function(row, col, prop) {
 		if (col === 1) {
 			return {
 				className : "htCenter"
@@ -45,16 +44,37 @@ $(function() {
 	});
 
 	var types = new Bloodhound({
-		datumTokenizer : Bloodhound.tokenizers.whitespace,
+		datumTokenizer : Bloodhound.tokenizers.obj.whitespace('rf', 'hersteller', 'haupttyp', 'baumuster'),
 		queryTokenizer : Bloodhound.tokenizers.whitespace,
 		prefetch : '../json/typen.json'
 	});
 
-	// $("#prefetch .typeahead").typeahead(null, {
-	// name : 'types',
-	// display : 'hersteller',
-	// source : types
-	// });
+	 function fetchDataWithDefaults(q, sync) {
+		if (q === '') {
+			sync(types.all());
+		} else {
+			types.search(q, sync);
+		}
+	}
+
+	$("#prefetch .typeahead")
+			.typeahead(
+					{
+						hint : true,
+						highlight : true,
+						minLength : 0
+					},
+					{
+						name : 'types',
+						source : fetchDataWithDefaults,
+						limit : 10,
+						display : Handlebars.compile('{{rf}} {{hersteller}} {{haupttyp}} {{baumuster}}'),
+						templates : {
+							empty : [ '<div class="empty-message">', 'Unable to find any results that match the current query',
+									'</div>' ].join('\n'),
+							suggestion : Handlebars.compile('<div>{{rf}} {{hersteller}} {{haupttyp}} {{baumuster}}</div>')
+						}
+					});
 });
 
 function headerRendererBlue(instance, td, row, col, prop, value, cellPropertis) {

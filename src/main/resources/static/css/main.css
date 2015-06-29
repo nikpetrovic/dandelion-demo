@@ -27,3 +27,16 @@ dl {
 	font-size: 0.9em;
 	margin-bottom: 10px;
 }
+
+.form-group {
+	margin-bottom: 0;
+}
+
+.dl-horizontal dt {
+	text-align: left;
+}
+
+.dl-horizontal dt.merged {
+	width: 100%;
+	text-align: left;
+}

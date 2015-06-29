@@ -1,0 +1,69 @@
+.tt-menu, .gist {
+	text-align: left;
+}
+
+.table-of-contents li {
+	display: inline-block;
+}
+
+.table-of-contents li a {
+	color: #999;
+	font-size: 16px;
+}
+
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.tt-hint {
+	color: #999;
+}
+
+.tt-menu {
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin: 12px 0;
+	padding: 8px 0;
+	width: 422px;
+	z-index: 200 !important;
+}
+
+.tt-suggestion {
+	line-height: 24px;
+	padding: 3px 20px;
+}
+
+.tt-suggestion:hover {
+	background-color: #0097cf;
+	color: #fff;
+	cursor: pointer;
+}
+
+.twitter-typeahead {
+	width: 100%;
+}
+
+.tt-suggestion.tt-cursor {
+	background-color: #0097cf;
+	color: #fff;
+}
+
+.tt-suggestion p {
+	margin: 0;
+}
+
+.gist {
+	font-size: 14px;
+}
+
+.empty-message {
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.tt-menu {
+	max-height: 150px;
+	overflow-y: auto;
+}
