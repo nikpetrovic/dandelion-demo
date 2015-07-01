@@ -66,4 +66,5 @@
 .tt-menu {
 	max-height: 150px;
 	overflow-y: auto;
+	width: inherit;
 }

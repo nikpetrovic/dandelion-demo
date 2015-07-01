@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
-<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.0/pikaday/pikaday.css}" />
-<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.0/handsontable.full.css}" />
+<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.1/pikaday/pikaday.css}" />
+<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.1/handsontable.full.css}" />
+<link rel="stylesheet"
+  th:href="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.css}" />
 <link rel="stylesheet" th:href="@{/css/main.css}" />
 <link rel="stylesheet" th:href="@{/css/typeahead-styles.css}" />
 
@@ -37,7 +39,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="#">Type Administration</a>
+                <a href="#" id="typeAdministrationMenuItem">Type Administration</a>
               </li>
               <li>
                 <a href="#">Copy (Country to country)</a>
@@ -220,21 +222,47 @@
         <div class="tab-pane fade" id="repairMethodsTab" role="tabpanel"></div>
         <div class="tab-pane fade" id="reportsTab" role="tabpanel"></div>
       </div>
-
     </div>
 
     <div id="table1Selected"></div>
   </div>
 
+  <div class="modal fade" id="typeAdministrationModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <div id="typeAdministrationContainer"
+            th:include="/typeAdministration :: typeAdministrationFragment"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/bootstrap/3.2.0/js/bootstrap.min.js}"></script>
-  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/moment/moment.js}"></script>
-  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/pikaday/pikaday.js}"></script>
-  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/zeroclipboard/ZeroClipboard.js}"></script>
-  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.0/handsontable.full.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/moment/moment.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/pikaday/pikaday.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/zeroclipboard/ZeroClipboard.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/handsontable.full.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.bundle.min.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/handlebars/3.0.0-1/handlebars.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/momentjs/2.10.3/min/moment-with-locales.min.js}"></script>
+  <script type="text/javascript"
+    th:src="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.js}"></script>
   <script type="text/javascript" th:src="@{js/lang/de.js}"></script>
+  <script type="text/javascript" th:src="@{/js/commons.js}"></script>
   <script type="text/javascript" th:src="@{js/twotables.js}"></script>
+  <script type="text/javascript" th:src="@{/js/typeAdministration.js}"></script>
 </body>
 </html>

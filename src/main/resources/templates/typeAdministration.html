@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.1/pikaday/pikaday.css}" />
+<link rel="stylesheet" th:href="@{/lib/handsontable/0.15.1/handsontable.full.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+<link rel="stylesheet"
+  th:href="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.css}" />
+
+<!-- DEFINED HERE FOR TESTING PURPOSES! USE THE CODE BELOW AS TH FRAGMENT! -->
+<script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
+<script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/moment/moment.js}"></script>
+<script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/pikaday/pikaday.js}"></script>
+<script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/zeroclipboard/ZeroClipboard.js}"></script>
+<!-- <script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/handsontable.full.js}"></script> -->
+<script type="text/javascript" th:src="@{/lib/handsontable/0.15.1/handsontable.full.js}"></script>
+<script type="text/javascript" th:src="@{/js/commons.js}"></script>
+</head>
+<body>
+  <div class="container">
+    <div th:fragment="typeAdministrationFragment">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="differentModel">Different Model</label>
+            <select id="differentModel" name="differentModel" class="form-control">
+              <option>A C6 CITROEN C1 P ab 05.2014</option>
+              <option>A CC CITROEN C4 Cactus 0B-0P ab 03.2014</option>
+            </select>
+          </div>
+        </div>
+        <form>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="axCode">AX-Code</label>
+              <input type="text" id="axCode" name="axCode" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="manufacturer">Manufacturer</label>
+              <input type="text" id="manufacturer" name="manufacturer" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="model">Model</label>
+              <input type="text" id="model" name="model" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="modelCode">Model Code</label>
+              <input type="text" id="modelCode" name="modelCode" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="bodyVersion">Body Version</label>
+              <input type="text" id="bodyVersion" name="bodyVersion" class="form-control" />
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="startDate">Start Date</label>
+                  <div class="input-group date" id="startDate">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="endDate">End Date</label>
+                  <div class="input-group date" id="endDate">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="actionTypeDefForSgs">Action Type Deffinition for SGS</label>
+              <input type="text" id="actionTypeDefForSgs" name="actionTypeDefForSgs" class="form-control" />
+            </div>
+            <div class="form-group">
+              <br class="multiColumnForm" />
+              <div class="text-right">
+                <button type="button" class="btn btn-default">Different Model-Description</button>
+                <button type="button" class="btn btn-danger">Update</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br />
+      <div id="tblSubmodelsDetails" style="overflow-x: scroll;"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" th:src="@{/webjars/momentjs/2.10.3/min/moment-with-locales.min.js}"></script>
+  <script type="text/javascript"
+    th:src="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/typeAdministration.js}"></script>
+</body>
+</html>

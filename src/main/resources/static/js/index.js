@@ -1,6 +1,6 @@
 $(function() {
 	var container = document.getElementById('table1');
-	var hot = new Handsontable(container, {
+	window.hot = new Handsontable(container, {
 		colHeaders : [ 'Car', 'Year', 'Price ($)', 'Price (€)' ],
 		columns : [ {
 			data : 'car'

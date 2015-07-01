@@ -40,3 +40,13 @@ dl {
 	width: 100%;
 	text-align: left;
 }
+
+br.multiColumnForm {
+	display: block;
+	margin-top: 24px;
+	content: " ";
+}
+
+/* .modal-body { */
+/* 	overflow-y: auto; */
+/* } */

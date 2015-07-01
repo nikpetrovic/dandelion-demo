@@ -24,6 +24,11 @@ public class IndexController {
 	return "index";
     }
     
+    @RequestMapping("/typeAdministration")
+    public String typeAdministration() {
+	return "typeAdministration";
+    }
+    
     @RequestMapping("/blank")
     public String blank() {
 	return "blank";

@@ -14,7 +14,7 @@ $(function() {
 		data : "ut"
 	} ];
 
-	var hot1 = initTable(colHeaders1, colDefs1, {}, "table1");
+	var hot1 = MyProject.Commons.initTable(colHeaders1, colDefs1, {}, "table1");
 
 	$.getJSON('../json/ut_for_auflage_id_eq_3182.json', function(data) {
 		hot1.loadData(data);
@@ -31,7 +31,7 @@ $(function() {
 		data : "cc"
 	} ];
 
-	var hot2 = initTable(colHeaders2, colDefs2, {}, "table2", function(row, col, prop) {
+	var hot2 = MyProject.Commons.initTable(colHeaders2, colDefs2, {}, "table2", function(row, col, prop) {
 		if (col === 1) {
 			return {
 				className : "htCenter"
@@ -75,6 +75,18 @@ $(function() {
 							suggestion : Handlebars.compile('<div>{{rf}} {{hersteller}} {{haupttyp}} {{baumuster}}</div>')
 						}
 					});
+	
+	
+	$("#typeAdministrationMenuItem").on("click", function(e) {
+		$("#typeAdministrationModal").modal("show");
+	});
+	$("#typeAdministrationModal").on("shown.bs.modal", function(e) {
+		hot3 = MyProject.Commons.initTable(colHeaders3, colDefs3, {}, "tblSubmodelsDetails");
+	});
+	$("#typeAdministrationModal").on("hidden.bs.modal", function(e) {
+		hot3.destroy();
+		hot3 = {};
+	});
 });
 
 function headerRendererBlue(instance, td, row, col, prop, value, cellPropertis) {
@@ -89,28 +101,4 @@ function headerRendererGreen(instance, td, row, col, prop, value, cellPropertis)
 	td.style.fontWeight = 'bold';
 	td.style.color = 'green';
 	td.style.background = '#CEC';
-}
-
-function initTable(colHeaders, colDefs, data, elementId, cellsCallback) {
-	var container = document.getElementById(elementId);
-	var hot = new Handsontable(container, {
-		data : data,
-		columnSorting : true,
-		stretchH : 'all',
-		colHeaders : colHeaders,
-		columns : colDefs,
-		contextMenu : true,
-		currentRowClassName : 'currentRow',
-		currentColClassName : 'currentCol',
-		readOnly : true,
-		fixedRowsBottom : 1,
-		cells : cellsCallback,
-		afterSelectionEnd : afterSelection
-	});
-
-	return hot;
-}
-
-function afterSelection(startRow, startColumn, endRow, endColumn) {
-	$("#table1Selected").text("Selected: " + startRow);
 }
