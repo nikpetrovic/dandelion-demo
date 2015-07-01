@@ -29,6 +29,11 @@ public class IndexController {
 	return "typeAdministration";
     }
     
+    @RequestMapping("/w2ui")
+    public String w2ui() {
+	return "w2ui";
+    }
+    
     @RequestMapping("/blank")
     public String blank() {
 	return "blank";
