@@ -29,6 +29,16 @@ public class IndexController {
 	return "typeAdministration";
     }
     
+    @RequestMapping("/ngGrid")
+    public String ngGrid() {
+	return "ngGrid";
+    }
+    
+    @RequestMapping("/slickGrid")
+    public String slickGrid() {
+	return "slickGrid";
+    }
+    
     @RequestMapping("/w2ui")
     public String w2ui() {
 	return "w2ui";
