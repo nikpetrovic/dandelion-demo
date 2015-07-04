@@ -5,8 +5,7 @@
 <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
 <link rel="stylesheet" th:href="@{/lib/handsontable/0.15.1/pikaday/pikaday.css}" />
 <link rel="stylesheet" th:href="@{/lib/handsontable/0.15.1/handsontable.full.css}" />
-<link rel="stylesheet"
-  th:href="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.css}" />
+<link rel="stylesheet" th:href="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.css}" />
 <link rel="stylesheet" th:href="@{/css/main.css}" />
 <link rel="stylesheet" th:href="@{/css/typeahead-styles.css}" />
 
@@ -17,8 +16,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuBar"
-          aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuBar" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -32,8 +30,7 @@
       <div class="collapse navbar-collapse" id="menuBar">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               Type
               <span class="caret"></span>
             </a>
@@ -61,6 +58,26 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              VIEWS
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Default View</a>
+              </li>
+              <li>
+                <a href="#">Country View</a>
+              </li>
+              <li>
+                <a href="#">Submodels View</a>
+              </li>
+              <li>
+                <a href="#">Repair Methods View</a>
+              </li>
+            </ul>
+          </li>
           <li>
             <a href="#">
               <span class="text-primary">Nikola Petrovic</span>
@@ -74,8 +91,7 @@
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#statusBar" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#statusBar" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -237,8 +253,7 @@
           <h4 class="modal-title">Modal title</h4>
         </div>
         <div class="modal-body">
-          <div id="typeAdministrationContainer"
-            th:include="/typeAdministration :: typeAdministrationFragment"></div>
+          <div id="typeAdministrationContainer" th:include="/typeAdministration :: typeAdministrationFragment"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -258,8 +273,7 @@
   <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.bundle.min.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/handlebars/3.0.0-1/handlebars.min.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/momentjs/2.10.3/min/moment-with-locales.min.js}"></script>
-  <script type="text/javascript"
-    th:src="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/Eonasdan-bootstrap-datetimepicker/4.7.14/bootstrap-datetimepicker.min.js}"></script>
   <script type="text/javascript" th:src="@{js/lang/de.js}"></script>
   <script type="text/javascript" th:src="@{/js/commons.js}"></script>
   <script type="text/javascript" th:src="@{js/twotables.js}"></script>

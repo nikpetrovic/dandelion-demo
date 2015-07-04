@@ -34,6 +34,11 @@ public class IndexController {
 	return "ngGrid";
     }
     
+    @RequestMapping("/jqgrid")
+    public String jqgrid() {
+	return "jqgrid";
+    }
+    
     @RequestMapping("/slickGrid")
     public String slickGrid() {
 	return "slickGrid";
