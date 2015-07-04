@@ -1,57 +1,158 @@
 $(function() {
+	$('#btn').click(function() {
+		mydata.pop();
+		$("#list48").trigger('reloadGrid');
+		console.log('reloaded');
+	});
+	
+	var COUNTRY_CODES = {
+		Ireland : "ie",
+		Spain : "es",
+		"United Kingdom" : "gb",
+		France : "fr",
+		Germany : "de",
+		Sweden : "se",
+		Italy : "it",
+		Greece : "gr",
+		Iceland : "is",
+		Portugal : "pt",
+		Malta : "mt",
+		Norway : "no",
+		Brazil : "br",
+		Argentina : "ar",
+		Colombia : "co",
+		Peru : "pe",
+		Venezuela : "ve",
+		Uruguay : "uy"
+	};
+
+	var countries = [ {
+		country : "Ireland",
+		continent : "Europe",
+		language : "English"
+	}, {
+		country : "Spain",
+		continent : "Europe",
+		language : "Spanish"
+	}, {
+		country : "United Kingdom",
+		continent : "Europe",
+		language : "English"
+	}, {
+		country : "France",
+		continent : "Europe",
+		language : "French"
+	}, {
+		country : "Germany",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Sweden",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Norway",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Italy",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Greece",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Iceland",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Portugal",
+		continent : "Europe",
+		language : "Portuguese"
+	}, {
+		country : "Malta",
+		continent : "Europe",
+		language : "(other)"
+	}, {
+		country : "Brazil",
+		continent : "South America",
+		language : "Portuguese"
+	}, {
+		country : "Argentina",
+		continent : "South America",
+		language : "Spanish"
+	}, {
+		country : "Colombia",
+		continent : "South America",
+		language : "Spanish"
+	}, {
+		country : "Peru",
+		continent : "South America",
+		language : "Spanish"
+	}, {
+		country : "Venezuela",
+		continent : "South America",
+		language : "Spanish"
+	}, {
+		country : "Uruguay",
+		continent : "South America",
+		language : "Spanish"
+	} ];
+	
 	var mydata = [ {
 		id : "1",
 		invdate : "2010-05-24",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		tax : "10.00",
 		total : "2111.00"
 	}, {
 		id : "2",
 		invdate : "2010-05-25",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		tax : "20.00",
 		total : "320.00"
 	}, {
 		id : "3",
 		invdate : "2007-09-01",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		tax : "30.00",
 		total : "430.00"
 	}, {
 		id : "4",
 		invdate : "2007-10-04",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		tax : "10.00",
 		total : "210.00"
 	}, {
 		id : "5",
 		invdate : "2007-10-05",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		tax : "20.00",
 		total : "320.00"
 	}, {
 		id : "6",
 		invdate : "2007-09-06",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		tax : "30.00",
 		total : "430.00"
 	}, {
 		id : "7",
 		invdate : "2007-10-04",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		tax : "10.00",
 		total : "210.00"
 	}, {
 		id : "8",
 		invdate : "2007-10-03",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "21.00",
@@ -59,7 +160,7 @@ $(function() {
 	}, {
 		id : "9",
 		invdate : "2007-09-01",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -67,7 +168,7 @@ $(function() {
 	}, {
 		id : "11",
 		invdate : "2007-10-01",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		amount : "200.00",
 		tax : "10.00",
@@ -75,7 +176,7 @@ $(function() {
 	}, {
 		id : "12",
 		invdate : "2007-10-02",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "20.00",
@@ -83,7 +184,7 @@ $(function() {
 	}, {
 		id : "13",
 		invdate : "2007-09-01",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -91,7 +192,7 @@ $(function() {
 	}, {
 		id : "14",
 		invdate : "2007-10-04",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		amount : "200.00",
 		tax : "10.00",
@@ -99,7 +200,7 @@ $(function() {
 	}, {
 		id : "15",
 		invdate : "2007-10-05",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "20.00",
@@ -107,7 +208,7 @@ $(function() {
 	}, {
 		id : "16",
 		invdate : "2007-09-06",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -115,7 +216,7 @@ $(function() {
 	}, {
 		id : "17",
 		invdate : "2007-10-04",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		amount : "200.00",
 		tax : "10.00",
@@ -123,7 +224,7 @@ $(function() {
 	}, {
 		id : "18",
 		invdate : "2007-10-03",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "20.00",
@@ -131,7 +232,7 @@ $(function() {
 	}, {
 		id : "19",
 		invdate : "2007-09-01",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -139,7 +240,7 @@ $(function() {
 	}, {
 		id : "21",
 		invdate : "2007-10-01",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		amount : "200.00",
 		tax : "10.00",
@@ -147,7 +248,7 @@ $(function() {
 	}, {
 		id : "22",
 		invdate : "2007-10-02",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "20.00",
@@ -155,7 +256,7 @@ $(function() {
 	}, {
 		id : "23",
 		invdate : "2007-09-01",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -163,7 +264,7 @@ $(function() {
 	}, {
 		id : "24",
 		invdate : "2007-10-04",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		amount : "200.00",
 		tax : "10.00",
@@ -171,7 +272,7 @@ $(function() {
 	}, {
 		id : "25",
 		invdate : "2007-10-05",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "20.00",
@@ -179,7 +280,7 @@ $(function() {
 	}, {
 		id : "26",
 		invdate : "2007-09-06",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -187,7 +288,7 @@ $(function() {
 	}, {
 		id : "27",
 		invdate : "2007-10-04",
-		name : "test",
+		name : "Serbia",
 		note : "note",
 		amount : "200.00",
 		tax : "10.00",
@@ -195,7 +296,7 @@ $(function() {
 	}, {
 		id : "28",
 		invdate : "2007-10-03",
-		name : "test2",
+		name : "Spain",
 		note : "note2",
 		amount : "300.00",
 		tax : "20.00",
@@ -203,7 +304,7 @@ $(function() {
 	}, {
 		id : "29",
 		invdate : "2007-09-01",
-		name : "test3",
+		name : "Argentina",
 		note : "note3",
 		amount : "400.00",
 		tax : "30.00",
@@ -216,7 +317,7 @@ $(function() {
 		height : 'auto',
 		rowNum : 30,
 		rowList : [ 10, 20, 30 ],
-		colNames : [ 'Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total', 'Notes' ],
+		colNames : [ 'Inv No', 'Date', 'Country', 'Amount', 'Tax', 'Total', 'Notes' ],
 		colModel : [ {
 			name : 'id',
 			index : 'id',
@@ -264,8 +365,9 @@ $(function() {
 		viewrecords : true,
 		sortname : 'name',
 		grouping : true,
+		multiselect : true,
 		groupingView : {
-			groupField : [ 'name' ]
+			groupField : [ 'name', 'invdate' ]
 		},
 		caption : "Grouping Array Data"
 	});

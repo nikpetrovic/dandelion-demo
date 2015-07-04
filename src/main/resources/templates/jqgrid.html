@@ -8,11 +8,40 @@
 <link rel="stylesheet" th:href="@{/webjars/jquery-ui/1.11.4/jquery-ui.css}" />
 <link rel="stylesheet" th:href="@{/lib/jqgrid/4.8.0/css/ui.jqgrid.css}" />
 <link rel="stylesheet" th:href="@{/lib/jqgrid/4.8.0/css/ui.jqgrid-bootstarp.css}" />
+<link rel="stylesheet" th:href="@{/lib/w2ui-1.4.2/w2ui-1.4.2.css}" />
+<link rel="stylesheet" th:href="@{/lib/bootstrap-tokenfield/0.12.1/css/bootstrap-tokenfield.css}" />
 <link rel="stylesheet" th:href="@{/css/jqgrid.css}" />
 
+<style>
+.w2ui-field input {
+	width: 400px;
+}
+
+.w2ui-field>div>span {
+	margin-left: 20px;
+}
+</style>
 </head>
 <body>
   <h2>ng-grid Demo</h2>
+  
+  <button type="button" id="btn">reload</button>
+
+  <!--   bootstrap-tokenfield BEGINS -->
+  <!--   <input id="tokenfield" type="text" /> -->
+  <!--   bootstrap-tokenfield ENDS -->
+
+  <!--   w2ui BEGINS -->
+  <div style="height: 20px"></div>
+  <div class="w2ui-field">
+    <label>Filter:</label>
+    <div>
+      <input id="enum" />
+    </div>
+  </div>
+  <div style="height: 10px"></div>
+
+  <!-- w2ui ENDS -->
 
   <table id="list48"></table>
   <div id="plist48"></div>
@@ -23,7 +52,12 @@
   <script type="text/javascript" th:src="@{/webjars/jquery-ui/1.11.4/jquery-ui.min.js}"></script>
   <script type="text/javascript" th:src="@{/lib/jqgrid/4.8.0/js/jquery.jqGrid.min.js}"></script>
   <script type="text/javascript" th:src="@{/lib/jqgrid/4.8.0/js/i18n/grid.locale-en.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/w2ui-1.4.2/w2ui-1.4.2.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/typeaheadjs/0.11.1/typeahead.bundle.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/handlebars/3.0.0-1/handlebars.min.js}"></script>
+  <script type="text/javascript" th:src="@{/lib/bootstrap-tokenfield/0.12.1/bootstrap-tokenfield.js}"></script>
   <script type="text/javascript" th:src="@{/js/jqgrid.js}"></script>
+  <script type="text/javascript" th:src="@{/js/w2ui.js}"></script>
 
 </body>
 </html>
