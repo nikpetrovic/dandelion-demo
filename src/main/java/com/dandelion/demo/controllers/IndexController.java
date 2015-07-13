@@ -23,32 +23,37 @@ public class IndexController {
     public String index() {
 	return "index";
     }
-    
+
+    @RequestMapping("/react")
+    public String react() {
+	return "react";
+    }
+
     @RequestMapping("/typeAdministration")
     public String typeAdministration() {
 	return "typeAdministration";
     }
-    
+
     @RequestMapping("/ngGrid")
     public String ngGrid() {
 	return "ngGrid";
     }
-    
+
     @RequestMapping("/jqgrid")
     public String jqgrid() {
 	return "jqgrid";
     }
-    
+
     @RequestMapping("/slickGrid")
     public String slickGrid() {
 	return "slickGrid";
     }
-    
+
     @RequestMapping("/w2ui")
     public String w2ui() {
 	return "w2ui";
     }
-    
+
     @RequestMapping("/blank")
     public String blank() {
 	return "blank";
