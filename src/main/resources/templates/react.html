@@ -11,14 +11,12 @@
     <div id="example"></div>
   </div>
 
-  <script th:src="@{lib/reactjs/0.13.3/react.js}"></script>
+  <!--   <script th:src="@{lib/reactjs/0.13.3/react.js}"></script> -->
   <script th:src="@{lib/reactjs/0.13.3/JSXTransformer.js}"></script>
+  <script th:src="@{lib/reactjs/0.13.3/react-with-addons.js}"></script>
+  <script th:src="@{lib/marked/0.3.3/marked.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/jquery/1.11.1/jquery.js}"></script>
+  <script type="text/jsx" th:src="@{js/react.js}"></script>
 
-  <script type="text/jsx">
-	React.render(
-		<h1>Hello World</h1>,
-		document.getElementById('example')
-	);
-  </script>
 </body>
 </html>
