@@ -1,0 +1,35 @@
+{
+  "name": "dandelion-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulp",
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "browserify": "^11.0.0",
+    "gulp": "^3.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-util": "^3.0.6",
+    "pretty-hrtime": "^1.0.0",
+    "reactify": "^1.1.1",
+    "require-dir": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikpetrovic/dandelion-demo.git"
+  },
+  "author": "Nikola Petrovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikpetrovic/dandelion-demo/issues"
+  },
+  "homepage": "https://github.com/nikpetrovic/dandelion-demo"
+}
