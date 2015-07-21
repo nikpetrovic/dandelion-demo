@@ -2,10 +2,15 @@
   "name": "dandelion-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "gulp",
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
   "dependencies": {
     "react": "^0.13.3",
-    "react-bootstrap": "^0.23.7"
+    "react-bootstrap": "^0.23.7",
+    "react-datagrid": "^1.2.13"
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
@@ -20,7 +25,13 @@
     "watchify": "^3.2.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"jsx-compile": "jsx --watch ./src/main/resources/static/jsx/ ./src/main/resources/static/js/build",
+	"broswerify-it": "browserify ./src/main/resources/static/js/build/reactOnly.js -o ./src/main/resources/static/js/dist/reactOnly.js",
+	"watchify-it1": "watchify ./src/main/resources/static/js/build/reactOnly.js -o ./src/main/resources/static/js/dist/reactOnly.js",
+	"watchify-it2": "watchify ./src/main/resources/static/js/build/reactOnly.js -o ./target/classes/static/js/dist/reactOnly.js",
+	"watchify-it": "npm run watchify-it1 & npm run watchify-it2",
+	"dev": "npm run jsx-compile & npm run broswerify-it & npm run watchify-it"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,6 @@
 var dest = './src/main/resources/static/js/build',
-  src = './react';
+  src = './react',
+  destBuild = './target/classes/static/js/build';
 
 module.exports = {
   browserSync: {
@@ -24,6 +25,11 @@ module.exports = {
     bundleConfigs: [{
       entries: src + '/reactOnly.js',
       dest: dest,
+      outputName: 'reactOnly.js'
+    },
+	{
+      entries: src + '/reactOnly.js',
+      dest: destBuild,
       outputName: 'reactOnly.js'
     }]
   }

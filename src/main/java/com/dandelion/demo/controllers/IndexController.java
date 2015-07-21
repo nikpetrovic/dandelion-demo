@@ -23,7 +23,17 @@ public class IndexController {
     public String index() {
 	return "index";
     }
-
+    
+    @RequestMapping("/nojsxreact")
+    public String nojsxreact() {
+	return "nojsxreact";
+    }
+    
+    @RequestMapping("/reactOnly")
+    public String reactOnly() {
+	return "reactOnly";
+    }
+    
     @RequestMapping("/react")
     public String react() {
 	return "react";

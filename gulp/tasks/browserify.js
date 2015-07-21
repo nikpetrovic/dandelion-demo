@@ -36,8 +36,6 @@ gulp.task('browserify', function(callback) {
       // Log when bundling starts
       bundleLogger.start(bundleConfig.outputName);
 	  
-	  bundler.transform(reactify);
-	  
       return bundler
         .bundle()
         // Report compile errors
